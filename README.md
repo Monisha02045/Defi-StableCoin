@@ -31,7 +31,7 @@ A decentralized, crypto-collateral-backed stablecoin system built using Solidity
 ### Clone & Build
 
 ```bash
-git clone https://github.com/yourname/defi-stablecoin.git
+git clone https://github.com/Monisha02045/Defi-StableCoin.git
 cd defi-stablecoin
 forge install
 forge build
