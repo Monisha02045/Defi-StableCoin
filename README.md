@@ -1,66 +1,76 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+<div style="text-align: center;">
+    <img src="./img/stablecoin.png" height=400 width=80%/>
+</div>
 
-Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## Documentation
+# 🪙 Decentralized Stablecoin (DSC) Protocol
 
-https://book.getfoundry.sh/
+A decentralized, crypto-collateral-backed stablecoin system built using Solidity, Foundry, and Chainlink. The protocol allows users to mint a USD-pegged stablecoin using ETH and BTC as collateral, ensuring trustless, censorship-resistant value stability.
 
-## Usage
 
-### Build
+## ✨ Features
 
-```shell
-$ forge build
+- 🏦 Mint/burn stablecoins (DSC) using ETH and BTC as collateral
+- 🔐 Over-collateralization to ensure protocol solvency
+- 📉 Automatic liquidation of unsafe positions
+- 🔗 Real-time price feeds via Chainlink oracles
+- 🧪 Built with Foundry for blazing-fast testing & development
+
+
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Foundry installed (`curl -L https://foundry.paradigm.xyz | bash`)
+- Node.js (for front-end integration if applicable)
+- Git, VSCode, MetaMask
+
+### Clone & Build
+
+```bash
+git clone https://github.com/yourname/defi-stablecoin.git
+cd defi-stablecoin
+forge install
+forge build
 ```
 
-### Test
+---
 
-```shell
-$ forge test
+## 🧾 Contracts Overview
+
+| Contract                      | Description |
+|-------------------------------|-------------|
+| `DSCEngin.sol`                | ERC20-compliant stablecoin contract |
+| `DecentralizedStableCoin.sol` | Manages collateral deposits and DSC minting |
+| `Oracle.sol`                  | Fetches price data using Chainlink |
+
+
+---
+
+## 🧪 Testing
+
+```bash
+forge test --coverage
 ```
 
-### Format
+Run unit tests  to ensure protocol robustness.
 
-```shell
-$ forge fmt
-```
+---
 
-### Gas Snapshots
+## 🔐 Security
 
-```shell
-$ forge snapshot
-```
+- Uses Chainlink for tamper-proof oracles
+- Built-in liquidation to maintain solvency
+- Extensive test coverage
+- (Optional) Audited with Slither and MythX
 
-### Anvil
+---
 
-```shell
-$ anvil
-```
+## 📄 License
 
-### Deploy
+This project is licensed under the [MIT License](LICENSE).
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+---
